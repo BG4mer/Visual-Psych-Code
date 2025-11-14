@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FNF Mod Editor</title>
+
+  <!-- Monaco Editor CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.39.0/min/vs/loader.js"></script>
+  
+  <!-- Fengari Lua interpreter -->
+  <script src="https://unpkg.com/fengari-web/dist/fengari-web.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="sidebar">
+    <h3>Files</h3>
+    <div id="file-list"></div>
+    <h4>Snippets</h4>
+    <div id="snippet-list"></div>
+    <button onclick="newFile('lua')">New Lua File</button>
+    <button onclick="newFile('haxe')">New Haxe File</button>
+    <button onclick="saveFile()">Save Current File</button>
+    <button onclick="runLua()">Run Lua</button>
+  </div>
+  
+  <div id="main-container">
+    <div id="tabs-bar"></div>
+    <div id="editor-container"></div>
+  </div>
+
+  <script src="snippets.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>
