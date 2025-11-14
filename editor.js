@@ -17,6 +17,26 @@ require(['vs/editor/editor.main'], function () {
   updateTabs();
 });
 
+// ------------------ Sidebar Resizer ------------------
+const resizer = document.getElementById('resizer');
+const sidebar = document.getElementById('sidebar');
+resizer.addEventListener('mousedown', initResize);
+function initResize(e) {
+  window.addEventListener('mousemove', resizeSidebar);
+  window.addEventListener('mouseup', stopResize);
+}
+function resizeSidebar(e) {
+  let newWidth = e.clientX;
+  if (newWidth < 150) newWidth = 150;
+  if (newWidth > 400) newWidth = 400;
+  sidebar.style.width = newWidth + 'px';
+}
+function stopResize() {
+  window.removeEventListener('mousemove', resizeSidebar);
+  window.removeEventListener('mouseup', stopResize);
+}
+
+// ------------------ Tabs ------------------
 function updateTabs() {
   const tabsBar = document.getElementById('tabs-bar');
   tabsBar.innerHTML = '';
@@ -35,6 +55,7 @@ function updateTabs() {
   });
 }
 
+// ------------------ File & Snippets ------------------
 function updateFileList() {
   const fileList = document.getElementById('file-list');
   fileList.innerHTML = '';
