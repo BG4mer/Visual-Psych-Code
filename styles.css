@@ -3,14 +3,22 @@ body {
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   height: 100vh;
+  background-color: #1e1e1e;
+  color: white;
 }
 
 #sidebar {
-  width: 200px;
-  background: #1e1e1e;
-  color: white;
+  width: 220px;
+  background: #252526;
   padding: 10px;
   overflow-y: auto;
+  transition: width 0.2s;
+}
+
+#resizer {
+  width: 5px;
+  cursor: ew-resize;
+  background: #3c3c3c;
 }
 
 #main-container {
@@ -21,25 +29,28 @@ body {
 
 #tabs-bar {
   display: flex;
-  background: #252526;
+  background: #333333;
   padding: 5px;
   overflow-x: auto;
+  border-bottom: 1px solid #444;
 }
 
 .tab {
   display: flex;
   align-items: center;
-  padding: 5px 10px;
-  margin-right: 2px;
+  padding: 5px 12px;
+  margin-right: 3px;
   cursor: pointer;
-  border-radius: 3px;
-  color: #d4d4d4;
+  border-radius: 3px 3px 0 0;
   background: #3c3c3c;
+  color: #d4d4d4;
+  font-size: 14px;
 }
 
 .tab.active {
   background: #007acc;
   color: white;
+  font-weight: bold;
 }
 
 .tab button {
@@ -48,17 +59,26 @@ body {
   border: none;
   color: white;
   cursor: pointer;
+  font-size: 12px;
 }
 
 #editor-container {
   flex-grow: 1;
 }
+
 button {
   margin-top: 5px;
   width: 100%;
-  padding: 5px;
+  padding: 6px;
   cursor: pointer;
   background: #007acc;
   color: white;
   border: none;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+h3, h4 {
+  margin: 5px 0;
+  font-weight: normal;
 }
